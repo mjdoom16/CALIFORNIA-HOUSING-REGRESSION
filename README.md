@@ -31,7 +31,7 @@ Hyperparameter:
 - learning_rate = 0.01,
 - loss/criterion = squared_error
   
-This showed Histogram Gradient Boosting (HGBT) as the best regression model, with a score of 0.809 and 0.255, respectively.
+This showed Histogram Gradient Boosting (HGBT) as the best regression model, with a score of 0.809 and 0.255, respectively. HGBT being best suited for large datasets (n_sample >=10,000) due its algorithm having an operation time of O(n_feat * n), where n is the number of samples at a node, which is superior to regular GBT algorithm. Surprisingly, Random Forest (RF) performed the worst, with scores of 0.506 and 0.661, respectively
 
 ## Hyperparameter Optimization
 After finding the model that performed the best, hyperparameters were tuned to tweak the model for optimum performance. The GridSearchCV was used, with parameter grid including:
@@ -51,3 +51,7 @@ using mse as the scoring function and a cross validation strategy of 5-fold. Fro
   
  True vs Pred, showed a positive trend to the data, with points close to the best fit line, as evidenced by the low MSE score.
  Residuals vs Pred, shows how far predicted points stray, with most data found ± 0.5, implying the model fit well.
+
+ ## Next Steps
+
+ The next step would be building a neural network (NN) model for regression tasks. While linear models and decision trees (& ensemble methods) are good tools to use, we could also assess the performance of NNs.
